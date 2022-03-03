@@ -1,0 +1,141 @@
+/* ------------------ */
+/* Variables          */
+/* ------------------ */
+:root {
+  --clr-dark: hsl(217, 19%, 24%);
+  --clr-dark-light: hsl(217, 19%, 38%);
+  --clr-dark-shadow: hsl(218, 23%, 16%);
+  --clr-light: hsl(193, 38%, 86%);
+  --clr-accent: hsl(150, 100%, 66%);
+}
+
+/* ------------------ */
+/* Resets             */
+/* ------------------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  font-family: "Manrope", sans-serif;
+}
+
+image {
+  display: block;
+}
+
+hr {
+  width: 100%;
+  outline-width: 1px;
+  outline-color: var(--clr-light);
+  outline-style: none;
+  opacity: 0.3;
+}
+
+/* Remove animations if turned off */
+@media (prefers-reduced-animation: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------ */
+/* Utility Classes.   */
+/* ------------------ */
+.container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  width: 100vm;
+  max-width: 1440px;
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+}
+
+/* ------------------ */
+/* Utility Classes.   */
+/* ------------------ */
+.quoteWrapper {
+  min-width: 18rem;
+  width: 35vw;
+  height: auto;
+  min-height: 15rem;
+  padding: 1.3rem;
+  border-radius: 10px;
+  background-color: var(--clr-dark-light);
+  box-shadow: 1px 1px 1rem 0 var(--clr-dark-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  position: relative;
+}
+
+.quoteWrapper > div {
+  height: auto;
+  min-height: 2rem;
+  display: grid;
+  width: 100%;
+  padding-block: 0.5rem;
+  place-items: center;
+}
+
+.quoteHeader {
+  color: var(--clr-accent);
+}
+
+.quoteText {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  flex-grow: 1;
+}
+
+.text {
+  padding-block: 0.5rem;
+}
+
+.quoteIcon {
+  height: 100%;
+  min-height: 3rem;
+  width: 100%;
+  background-image: url(./svg/pattern-divider-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+@media screen and (min-width: 768px) {
+  .quoteIcon {
+    background-image: url(./svg/pattern-divider-desktop.svg);
+  }
+}
+.quoteDice {
+  cursor: pointer;
+  background-color: var(--clr-accent);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.quoteDice:hover {
+  box-shadow: 0 0 1.5rem 0 var(--clr-accent);
+}
